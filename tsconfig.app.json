@@ -10,14 +10,13 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
     "composite": true,
-
-    /* --- FIX UNTUK VERCEL: ABAIKAN VARIABEL TIDAK TERPAKAI --- */
+    "allowImportingTsExtensions": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noImplicitAny": false
