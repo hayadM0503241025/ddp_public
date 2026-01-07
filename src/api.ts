@@ -1,21 +1,29 @@
 import axios from 'axios';
 
-const BASE_URL = "http://ddp_api.test/api"; 
+// SOP: Alamat dinamis dari Vercel Environment Variables
+const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/api"; 
 
 export const api = axios.create({
     baseURL: BASE_URL,
-    headers: { 'Accept': 'application/json' }
+    headers: { 
+        'Accept': 'application/json',
+        'ngrok-skip-browser-warning': '69420' // Bypass layar biru Ngrok
+    }
 });
 
-// FUNGSI PINTAR: Mendukung String tunggal maupun Array gambar
+// FUNGSI PINTAR GAMBAR: Otomatis merubah alamat mengikuti link API yang aktif
 export const getStorageUrl = (path: any) => {
     if (!path) return "/img/placeholder.png"; 
     
-    // LOGIKA: Jika path adalah array (Multiple Upload), ambil gambar pertama untuk sampul
+    // Jika data adalah array (multiple), ambil yang pertama
     let targetPath = Array.isArray(path) ? path[0] : path;
 
     if (typeof targetPath !== 'string') return "/img/placeholder.png";
     
     const cleanPath = targetPath.replace('public/', '');
-    return `http://ddp_api.test/storage/${cleanPath}`;
+    
+    // Inovasi: Mengubah /api menjadi /storage pada link aktif (Ngrok atau Localhost)
+    const storageBase = BASE_URL.replace('/api', '/storage');
+    
+    return `${storageBase}/${cleanPath}`;
 };
