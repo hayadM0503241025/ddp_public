@@ -156,7 +156,7 @@ export const Navbar = () => {
 
         {/* --- ACTION BUTTON --- */}
         <div className="flex items-center gap-4">
-          <a href="http://localhost:3000/" target="_blank" rel="noreferrer" className="hidden md:flex items-center gap-2 bg-[#111827] text-white px-7 py-3 rounded-full font-black uppercase tracking-widest text-[9px] shadow-xl hover:bg-[#E3242B] transition-all transform hover:-translate-y-1">
+          <a href="https://ddp-admin.vercel.app/#/login" target="_blank" rel="noreferrer" className="hidden md:flex items-center gap-2 bg-[#111827] text-white px-7 py-3 rounded-full font-black uppercase tracking-widest text-[9px] shadow-xl hover:bg-[#E3242B] transition-all transform hover:-translate-y-1">
             <ShieldCheck size={14} className="text-[#E3242B]" /> PORTAL ADMIN
           </a>
           <button className="lg:hidden text-[#E3242B]" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
