@@ -177,7 +177,7 @@ export const Navbar = () => {
                 {item === 'testimonials' ? 'TESTIMONIALS' : item.toUpperCase()}
             </button>
           ))}
-          <a href="http://localhost:3000/" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 w-full bg-[#E3242B] text-white py-5 rounded-2xl font-black text-[10px] tracking-[0.2em] shadow-lg shadow-red-900/20 uppercase">
+          <a href="https://ddp-admin.vercel.app/#/login" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 w-full bg-[#E3242B] text-white py-5 rounded-2xl font-black text-[10px] tracking-[0.2em] shadow-lg shadow-red-900/20 uppercase">
              <ShieldCheck size={16}/> MASUK PORTAL ADMIN
           </a>
         </div>
